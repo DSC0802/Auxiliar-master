@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KonLuzHabana Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="home-background">
+    <!-- Header Section -->
+    <header>
+      <div class="photo">
+        <h1 id="main-header">Kon'LuzHabana Gallery</h1>
+      </div>
+    </header>
+
+    <!-- Main Navigation Menu -->
+    <nav class="main-menu">
+      <div class="icons8-menu"></div>
+      <ul>
+        <li class="nav-link">
+          <a href="#" class="home" onclick="showSection('home')">Home</a>
+        </li>
+        <li class="nav-link">
+          <a href="#" class="ceilingLamps" onclick="showSection('ceilingLamps')"
+            >Ceiling Lamps</a
+          >
+        </li>
+        <li class="nav-link">
+          <a href="#" class="tableLamps" onclick="showSection('tableLamps')"
+            >Table Lamps</a
+          >
+        </li>
+        <li class="nav-link">
+          <a href="#" class="appliques" onclick="showSection('appliques')"
+            >Appliques</a
+          >
+        </li>
+        <li class="nav-link">
+          <a href="#" class="ornaments" onclick="showSection('ornaments')"
+            >Ornaments</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Gallery Section -->
+    <main class="galleryP" id="gallery">
+      <!-- Gallery content will be loaded here -->
+    </main>
+
+    <!-- Modal for Image Details -->
+    <div id="image-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <button class="editBtn" onclick="toggleEdit()">
+          Edit
+          <img src="Sources/icons8-editar.svg" alt="logo" id="logo-image" />
+        </button>
+
+        <button class="deleteBtn" onclick="deleteImage()">
+          Delete
+          <img
+            src="Sources/icons8-basura-llena.svg"
+            alt="logoB"
+            id="logoB-image"
+          />
+        </button>
+        <div class="IMGBtn">
+          <img id="modal-image" src="" alt="Selected Image" />
+          <p id="modal-description">Description</p>
+        </div>
+        <div id="modal-details">
+          <textarea id="modal-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Image Form -->
+    <div id="add-image-section">
+      <input type="file" id="image-file" accept="image/*" />
+      <label for="image-file">Choose an image</label>
+      <!-- Etiqueta estilizada -->
+      <textarea
+        id="new-image-description"
+        placeholder="Enter image description"
+      ></textarea>
+
+      <button onclick="uploadImage()">Upload Image</button>
+      <button onclick="hideUploadForm()">Cancel</button>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Gallery Project by DSC</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
