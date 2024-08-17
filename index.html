@@ -51,20 +51,8 @@
     <div id="image-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-
-        <button class="editBtn" onclick="toggleEdit()">
-          Edit
-          <img src="Sources/icons8-editar.svg" alt="logo" id="logo-image" />
-        </button>
-
-        <button class="deleteBtn" onclick="deleteImage()">
-          Delete
-          <img
-            src="Sources/icons8-basura-llena.svg"
-            alt="logoB"
-            id="logoB-image"
-          />
-        </button>
+        <button class="editBtn" onclick="toggleEdit()">Edit</button>
+        <button class="deleteBtn" onclick="deleteImage()">Delete</button>
         <div class="IMGBtn">
           <img id="modal-image" src="" alt="Selected Image" />
           <p id="modal-description">Description</p>
@@ -79,12 +67,10 @@
     <div id="add-image-section">
       <input type="file" id="image-file" accept="image/*" />
       <label for="image-file">Choose an image</label>
-      <!-- Etiqueta estilizada -->
       <textarea
         id="new-image-description"
         placeholder="Enter image description"
       ></textarea>
-
       <button onclick="uploadImage()">Upload Image</button>
       <button onclick="hideUploadForm()">Cancel</button>
     </div>

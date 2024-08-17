@@ -27,12 +27,10 @@ function showSection(section) {
         case 'ceilingLamps':
             content = `
                 <div class="images">
-                    <img src="Sources/CieilingLamps/Lamp1.jpg" alt="Ceiling Lamp 1" />
+                    <img src="Sources/CeilingLamps/Lamp1.jpg" alt="Ceiling Lamp 1" />
                     <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 2" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 2" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 3" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 4" />
-                    
+                    <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 3" />
+                    <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 4" />
                 </div>
                 <button class="add-image-btn">Add Image</button>
             `;
@@ -48,7 +46,7 @@ function showSection(section) {
                     <img src="https://via.placeholder.com/300x200" alt="Table Lamp 2" />
                     <img src="https://via.placeholder.com/300x200" alt="Table Lamp 3" />
                     <img src="https://via.placeholder.com/300x200" alt="Table Lamp 4" />
-                    </div>
+                </div>
                 <button class="add-image-btn">Add Image</button>
             `;
             header.textContent = 'Table Lamps';
@@ -82,7 +80,8 @@ function showSection(section) {
     }
 
     galleryDiv.innerHTML = content;
-    galleryDiv.appendChild(document.getElementById('add-image-section'));
+    // Make sure 'add-image-section' is displayed as needed
+    document.getElementById('add-image-section').style.display = 'none';
 }
 
 function showUploadForm() {
@@ -92,19 +91,19 @@ function showUploadForm() {
 function hideUploadForm() {
     document.getElementById('add-image-section').style.display = 'none';
 }
-//Funcion de añadir y crear la imagen
+
 function uploadImage() {
     const fileInput = document.getElementById('image-file');
     const descriptionInput = document.getElementById('new-image-description');
     const galleryDiv = document.getElementById('gallery');
-    
+
     if (fileInput.files.length === 0) {
         alert('Please select an image file.');
         return;
     }
-    
+
     const file = fileInput.files[0];
-    const description = descriptionInput.value.trim(); 
+    const description = descriptionInput.value.trim();
 
     const reader = new FileReader();
     reader.onload = function(event) {
@@ -112,41 +111,27 @@ function uploadImage() {
         const imgElement = document.createElement('img');
         imgElement.src = imgSrc;
         imgElement.alt = description || 'New Image';
-        
-    
+
         let imagesDiv = galleryDiv.querySelector('.images');
         if (!imagesDiv) {
             imagesDiv = document.createElement('div');
             imagesDiv.classList.add('images');
             galleryDiv.appendChild(imagesDiv);
         }
-        
-        const newImage = document.createElement('img');
-        newImage.src = imgSrc;
-        newImage.alt = description;
-        imagesDiv.appendChild(newImage);
 
+        imagesDiv.appendChild(imgElement);
         hideUploadForm();
     };
 
     reader.readAsDataURL(file);
 }
 
-function showUploadForm() {
-    document.getElementById('add-image-section').style.display = 'block';
-}
-
-function hideUploadForm() {
-    document.getElementById('add-image-section').style.display = 'none';
-}
-
-
 function openModal(src, alt) {
     const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
     const modalDescription = document.getElementById('modal-description');
     const modalTextarea = document.getElementById('modal-textarea');
-    
+
     modalImage.src = src;
     modalImage.alt = alt;
     modalDescription.textContent = alt;
@@ -164,7 +149,7 @@ function closeModal() {
 function toggleEdit() {
     const modalDetails = document.getElementById('modal-details');
     const descriptionTextarea = document.getElementById('modal-textarea');
-    
+
     if (modalDetails.classList.contains('editing')) {
         const modalImage = document.getElementById('modal-image');
         modalImage.alt = descriptionTextarea.value;
@@ -176,12 +161,12 @@ function toggleEdit() {
         descriptionTextarea.focus();
     }
 }
-//Funcion de eliminar la imagen seleccionada
+
 function deleteImage() {
     const modalImage = document.getElementById('modal-image');
     const galleryDiv = document.getElementById('gallery');
     const imgSrc = modalImage.src;
-    
+
     const images = galleryDiv.querySelectorAll('img');
     images.forEach(img => {
         if (img.src === imgSrc) {
