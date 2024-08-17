@@ -152,22 +152,21 @@ function closeModal() {
     modal.style.display = 'none';
 }
 //Funcion para cambiar entre el modo edicion y el modo vista en el modal
-// Función para cambiar entre el modo edición y el modo vista en el modal
 function toggleEdit() {
     const modalDetails = document.getElementById('modal-details');
     const descriptionTextarea = document.getElementById('modal-textarea');
 
     if (modalDetails.classList.contains('editing')) {
-        // Guardar cambios y salir del modo edición
+    
         const modalImage = document.getElementById('modal-image');
         modalImage.alt = descriptionTextarea.value;
         document.getElementById('modal-description').textContent = descriptionTextarea.value;
         modalDetails.classList.remove('editing');
-        descriptionTextarea.style.display = 'none'; // Ocultar textarea
+        descriptionTextarea.style.display = 'none';
     } else {
-        // Entrar en modo edición
+        
         modalDetails.classList.add('editing');
-        descriptionTextarea.style.display = 'block'; // Mostrar textarea
+        descriptionTextarea.style.display = 'block';
         descriptionTextarea.focus();
     }
 }
