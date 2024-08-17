@@ -1,3 +1,5 @@
+// Utilizo un Event Listener para manejar los clicks en las secciones de galleria
+//Si es una imagen abre el open Modal, sino entonces el click es en el boton addImg x lo tanto se abre el formulario de agregar la imagen 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('gallery').addEventListener('click', function(event) {
         if (event.target.tagName === 'IMG') {
@@ -7,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
+//Funcion de mostrar la seccion dependiendo de lo tocado en el nav.
 function showSection(section) {
     const galleryDiv = document.getElementById('gallery');
     const body = document.body;
@@ -80,23 +82,23 @@ function showSection(section) {
     }
 
     galleryDiv.innerHTML = content;
-    // Make sure 'add-image-section' is displayed as needed
+    
     document.getElementById('add-image-section').style.display = 'none';
 }
-
+// Funcion para mostrar el formulario de carga de imágenes.
 function showUploadForm() {
     document.getElementById('add-image-section').style.display = 'block';
 }
-
+// Funcion para ocultarlo
 function hideUploadForm() {
     document.getElementById('add-image-section').style.display = 'none';
 }
-
+//Funcion de Cargar  y Añadir la imagen a la galeria en que se encuentra el usuario
 function uploadImage() {
     const fileInput = document.getElementById('image-file');
     const descriptionInput = document.getElementById('new-image-description');
     const galleryDiv = document.getElementById('gallery');
-
+    //Alerta x si el usuario no elige ninguna imagen y toca el boton de subir la imagen
     if (fileInput.files.length === 0) {
         alert('Please select an image file.');
         return;
@@ -104,14 +106,14 @@ function uploadImage() {
 
     const file = fileInput.files[0];
     const description = descriptionInput.value.trim();
-
     const reader = new FileReader();
+     // Creamos la imagen con su contenedor
     reader.onload = function(event) {
         const imgSrc = event.target.result;
         const imgElement = document.createElement('img');
         imgElement.src = imgSrc;
         imgElement.alt = description || 'New Image';
-
+         
         let imagesDiv = galleryDiv.querySelector('.images');
         if (!imagesDiv) {
             imagesDiv = document.createElement('div');
@@ -125,7 +127,7 @@ function uploadImage() {
 
     reader.readAsDataURL(file);
 }
-
+//Funcion para Abrir el modal de Edicion de descripcion y Eliminar
 function openModal(src, alt) {
     const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
@@ -145,7 +147,7 @@ function closeModal() {
     const modal = document.getElementById('image-modal');
     modal.style.display = 'none';
 }
-
+//Funcion para cambiar entre el modo edicion y el modo vista en el modal
 function toggleEdit() {
     const modalDetails = document.getElementById('modal-details');
     const descriptionTextarea = document.getElementById('modal-textarea');
@@ -161,7 +163,7 @@ function toggleEdit() {
         descriptionTextarea.focus();
     }
 }
-
+//Funcion para eliminar la imagen de la galeria
 function deleteImage() {
     const modalImage = document.getElementById('modal-image');
     const galleryDiv = document.getElementById('gallery');
@@ -173,6 +175,6 @@ function deleteImage() {
             img.remove();
         }
     });
-
+// Cerramos el modal luego de terminar, funcion implementada arriba
     closeModal();
 }
