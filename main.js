@@ -27,7 +27,7 @@ function showSection(section) {
         case 'ceilingLamps':
             content = `
                 <div class="images">
-                    <img src="Sources/CeilingLamps/Lamp1.jpg" alt="Ceiling Lamp 1" />
+                    <img src="Sources/CieilingLamps/Lamp1.jpg" alt="Ceiling Lamp 1" />
                     <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 2" />
                     <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 3" />
                     <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 4" />
