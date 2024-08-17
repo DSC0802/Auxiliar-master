@@ -146,6 +146,16 @@ function openModal(src, alt) {
     modal.style.display = 'block';
     document.getElementById('modal-details').classList.remove('editing');
 }
+//Funcion para guardar la imagen en el almacenamiento del navegador
+function saveImage() {
+    const modalImage = document.getElementById('modal-image');
+    const imageUrl = modalImage.src;
+    
+    if (imageUrl) {
+        localStorage.setItem('savedImage', imageUrl);
+        alert('Image saved Successfully.');
+    } 
+}
 
 function closeModal() {
     const modal = document.getElementById('image-modal');
