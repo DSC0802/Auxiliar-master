@@ -97,27 +97,34 @@ function showUploadForm() {
 function hideUploadForm() {
     document.getElementById('add-image-section').style.display = 'none';
 }
-//Funcion de Cargar  y Añadir la imagen a la galeria en que se encuentra el usuario
+// Función de Cargar y Añadir la imagen a la galería en la que se encuentra el usuario
 function uploadImage() {
     const fileInput = document.getElementById('image-file');
-    const descriptionInput = document.getElementById('new-image-description');
     const galleryDiv = document.getElementById('gallery');
-    //Alerta x si el usuario no elige ninguna imagen y toca el boton de subir la imagen
+
+    
     if (fileInput.files.length === 0) {
         alert('Please select an image file.');
         return;
     }
 
     const file = fileInput.files[0];
-    const description = descriptionInput.value.trim();
     const reader = new FileReader();
-     // Creamos la imagen con su contenedor
+
+    
+    const description = prompt('Enter a description for the image:');
+    if (description === null || description.trim() === '') {
+        alert('Description is required.');
+        return;
+    }
+
+    
     reader.onload = function(event) {
         const imgSrc = event.target.result;
         const imgElement = document.createElement('img');
         imgElement.src = imgSrc;
-        imgElement.alt = description || 'New Image';
-         
+        imgElement.alt = description; 
+        
         let imagesDiv = galleryDiv.querySelector('.images');
         if (!imagesDiv) {
             imagesDiv = document.createElement('div');

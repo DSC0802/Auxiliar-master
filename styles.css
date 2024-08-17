@@ -208,7 +208,7 @@ main {
     background-color: rgb(150, 150, 76);
 }
 
-/* Botón "Add Image" */
+/* Botones */
 .add-image-btn {
     display: block;
     position: relative;
@@ -229,8 +229,78 @@ main {
 .add-image-btn:hover {
     background-color: rgb(150, 150, 76);
 }
+.close {
+    position: relative;
+    position: absolute;
+    width: 15px;
+    right: 15px;
+    top: 1px;
+    color: black;
+  
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #d0cf69;
+    text-decoration: none;
+    cursor: pointer;
+    }
 
-
+    .editBtn{
+        display: relative;
+        position: absolute;
+        right: 15px;
+        top: 40px;
+        border: none;
+        border-radius: 4px;
+        background-color: none;
+        height: 40px;
+        width: 50px;
+        background-color: #d0cf69;
+    }
+    .editBtn:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+        
+    
+    .editing .editBtn {
+        background-color: rgb(150, 150, 76);
+    }
+    .saveBtn {
+        display: relative;
+      position: absolute;
+      right: 15px;
+      top: 140px;
+      border: none;
+      border-radius: 4px;
+      background-color: none;
+      height: 40px;
+      width: 50px;
+      background-color: #d0cf69;
+      }
+      
+      .saveBtn:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    .deleteBtn{
+      display: relative;
+      position: absolute;
+      right: 15px;
+      top: 90px;
+      border: none;
+      border-radius: 4px;
+      background-color: none;
+      height: 40px;
+      width: 50px;
+      background-color: #d0cf69;
+    }
+    .deleteBtn:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    
 
 /* Modal Edit & Delete */
 
@@ -265,24 +335,6 @@ height: auto;
 border-radius: 8px;
 
 }
-.close {
-position: relative;
-position: absolute;
-width: 15px;
-right: 15px;
-top: 1px;
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
-}
 
 textarea {
 width: 100%;
@@ -305,54 +357,6 @@ display:block;
       background-size: 100%;
      }
 
-.editBtn{
-    display: relative;
-    position: absolute;
-    right: 15px;
-    top: 40px;
-    border: none;
-    border-radius: 4px;
-    background-color: none;
-    height: 40px;
-    width: 50px;
-}
-.editBtn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-    
-
-.editing .editBtn {
-    background-color: rgb(150, 150, 76);
-}
-.saveBtn {
-    display: relative;
-  position: absolute;
-  right: 15px;
-  top: 140px;
-  border: none;
-  border-radius: 4px;
-  background-color: none;
-  height: 40px;
-  width: 50px;
-  }
-  
-  .saveBtn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-.deleteBtn{
-  display: relative;
-  position: absolute;
-  right: 15px;
-  top: 90px;
-  border: none;
-  border-radius: 4px;
-  background-color: none;
-  height: 40px;
-  width: 50px;
-}
-.deleteBtn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 
 #modal-details {
 margin-top: 10px;
