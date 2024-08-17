@@ -44,11 +44,12 @@ function showSection(section) {
         case 'tableLamps':
             content = `
                 <div class="images">
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 1" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 2" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 3" />
-                    <img src="https://via.placeholder.com/300x200" alt="Table Lamp 4" />
-                </div>
+                    <img src="Sources/TableLamps/Cuadrada de paja.jpg" alt="Lamp whit bottle base and square straw shade" />
+                    <img src="Sources/TableLamps/GinMare.jpg" alt="Lamp whit Gin Mare bottle base and rope lampshade" />
+                    
+                    <img src="Sources/TableLamps/Tequila Rose.jpg" alt="Lamp whit Tequila Rose bottle base and canvas lampshade" />
+                    <img src="Sources/TableLamps/Circular Paja.jpg" alt="Lamp whit 3-leg base and circular straw shade" />
+                    </div>
                 <button class="add-image-btn">Add Image</button>
             `;
             header.textContent = 'Table Lamps';
@@ -59,7 +60,7 @@ function showSection(section) {
         case 'appliques':
             content = `
                 <div class="images">
-                    <img src="https://via.placeholder.com/300x200" alt="Applique 1" />
+                    <img src="Sources/Appliques/3Bottle.jpg" alt="Special applique lamp with 3 bottles" />
                 </div>
                 <button class="add-image-btn">Add Image</button>
             `;
@@ -71,7 +72,10 @@ function showSection(section) {
         case 'ornaments':
             content = `
                 <div class="images">
-                    <img src="https://via.placeholder.com/300x200" alt="Ornament 1" />
+                    <img src="Sources/Ornaments/Hallowen.jpg" alt="Bottle lamp wwith decoration for Hallowen" />
+                    <img src="Sources/Ornaments/EspecialKonLuz.jpg" alt="Lamp with secial decoration by Kon'Luz" />
+                    <img src="Sources/Ornaments/Tuberia.jpg" alt="Night Table decoration" />
+                    <img src="Sources/Ornaments/BotellaCepaso.jpg" alt="Bottle Cepaso lamp" />
                 </div>
                 <button class="add-image-btn">Add Image</button>
             `;
@@ -148,18 +152,22 @@ function closeModal() {
     modal.style.display = 'none';
 }
 //Funcion para cambiar entre el modo edicion y el modo vista en el modal
+// Función para cambiar entre el modo edición y el modo vista en el modal
 function toggleEdit() {
     const modalDetails = document.getElementById('modal-details');
     const descriptionTextarea = document.getElementById('modal-textarea');
 
     if (modalDetails.classList.contains('editing')) {
+        // Guardar cambios y salir del modo edición
         const modalImage = document.getElementById('modal-image');
         modalImage.alt = descriptionTextarea.value;
         document.getElementById('modal-description').textContent = descriptionTextarea.value;
         modalDetails.classList.remove('editing');
+        descriptionTextarea.style.display = 'none'; // Ocultar textarea
     } else {
+        // Entrar en modo edición
         modalDetails.classList.add('editing');
-        descriptionTextarea.style.display = 'block';
+        descriptionTextarea.style.display = 'block'; // Mostrar textarea
         descriptionTextarea.focus();
     }
 }
