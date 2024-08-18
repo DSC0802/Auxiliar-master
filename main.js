@@ -29,11 +29,13 @@ function showSection(section) {
         case 'ceilingLamps':
             content = `
                 <div class="images">
-                    <img src="Sources/CieilingLamps/Lamp1.jpg" alt="Ceiling Lamp 1" />
-                    <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 2" />
-                    <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 3" />
-                    <img src="https://via.placeholder.com/300x200" alt="Ceiling Lamp 4" />
-                </div>
+                    <img src="Sources/CieilingLamps/Lamp1.jpg" alt="Lamp madde of wood and glass" />
+                    <img src="Sources/CieilingLamps/Especial.jpg" alt="Lamp with straw  with warm light" />
+                    <img src="Sources/CieilingLamps/Circular.jpg" alt="Lamp made with processed bamboo" />
+                    <img src="Sources/CieilingLamps/Dos juntas.jpg" alt="Lamp made with processed bamboo" />
+                    <img src="Sources/CieilingLamps/Lampara Blanca.jpg" alt="Lamp made with PVC and Straw" />
+                     <img src="Sources/CieilingLamps/two.jpg" alt="Lamp made with processed bamboo" />
+                    </div>
                 <button class="add-image-btn">Add Image</button>
             `;
             header.textContent = 'Ceiling Lamps';
@@ -46,9 +48,11 @@ function showSection(section) {
                 <div class="images">
                     <img src="Sources/TableLamps/Cuadrada de paja.jpg" alt="Lamp whit bottle base and square straw shade" />
                     <img src="Sources/TableLamps/GinMare.jpg" alt="Lamp whit Gin Mare bottle base and rope lampshade" />
-                    
                     <img src="Sources/TableLamps/Tequila Rose.jpg" alt="Lamp whit Tequila Rose bottle base and canvas lampshade" />
                     <img src="Sources/TableLamps/Circular Paja.jpg" alt="Lamp whit 3-leg base and circular straw shade" />
+                    <img src="Sources/TableLamps/Mesa de noche.jpg" alt="Lamp made whit Bamboo and Wood" />
+                    <img src="Sources/TableLamps/Preferida.jpg" alt="Lamp made whit vintage wood and copper" />
+                    <img src="Sources/TableLamps/Ron Santiago.jpg" alt="Lamp whit Ron Santiago bottle " />
                     </div>
                 <button class="add-image-btn">Add Image</button>
             `;
@@ -61,7 +65,9 @@ function showSection(section) {
             content = `
                 <div class="images">
                     <img src="Sources/Appliques/3Bottle.jpg" alt="Special applique lamp with 3 bottles" />
-                </div>
+                    <img src="Sources/Appliques/pasillo.jpg" alt="Special applique lamp with slab and pencil holder" />
+                
+                    </div>
                 <button class="add-image-btn">Add Image</button>
             `;
             header.textContent = 'Appliques';
@@ -76,6 +82,9 @@ function showSection(section) {
                     <img src="Sources/Ornaments/EspecialKonLuz.jpg" alt="Lamp with secial decoration by Kon'Luz" />
                     <img src="Sources/Ornaments/Tuberia.jpg" alt="Night Table decoration" />
                     <img src="Sources/Ornaments/BotellaCepaso.jpg" alt="Bottle Cepaso lamp" />
+                    <img src="Sources/Ornaments/bomb.jpg" alt="Oil Lamp" />
+                    <img src="Sources/Ornaments/best.jpg" alt="Kettle Lamp with true plant" />
+                    <img src="Sources/Ornaments/Muñeco.jpg" alt="Doll" />
                 </div>
                 <button class="add-image-btn">Add Image</button>
             `;

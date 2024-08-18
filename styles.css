@@ -111,6 +111,7 @@ background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vc
 background-size: 100%; }
 
 
+
 /*Gallery*/
 main {
     margin: top 20px;
@@ -305,6 +306,7 @@ main {
 /* Modal Edit & Delete */
 
 .modal {
+   
     display: none;
     position: fixed;
     z-index: 100;
@@ -317,6 +319,7 @@ main {
 }
 
 .modal-content {
+
 position: relative;
 background-color: #fefefe;
 margin: 10% ;
@@ -327,6 +330,7 @@ max-width: 600px;
 }
 
 .modal-content img {
+   
 position: relative;
 top: 5px;
 left: 5px;
@@ -349,6 +353,7 @@ display: none;
 display:block;
 } 
 .icons8-editar { 
+   
     display: inline-block;
     position: relative;
     width: 48px;
@@ -515,7 +520,7 @@ margin: 5px;
 
     .svg-background {
         min-width: 320px;
-        height: 200dvh; 
+        height: 250dvh; 
         overflow: auto; 
     }
     
@@ -561,11 +566,14 @@ margin: 5px;
 
     }
     .modal-content {
-        
         margin: 50% 20%;
         width: 58%;
         height:35%;   
+    }
+    #modal-image{
+        height: 170px;
     } 
+    
 
     .main-menu:hover{
         
