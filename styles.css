@@ -140,7 +140,6 @@ main {
     
 }
 
-
 /* Formulario de Añadir Imagen */
 #add-image-section {
     display: none; 
@@ -173,14 +172,12 @@ main {
     text-align: center;
     width: 90%;
     margin-bottom: 10px;
-    
-    
+     
 }
 #add-image-section input[type="file"]:hover + label {
      background-color: rgb(150, 150, 76);
     cursor: pointer; 
 }
-
 
 
 #modal-textarea {
